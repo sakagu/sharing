@@ -1,0 +1,9 @@
+* {
+  box-sizing: border-box;
+}
+@import "header";
+@import "side";
+@import "main";
+.wrapper__content {
+  display: flex;
+}

@@ -1,0 +1,37 @@
+.header {
+  background-color: skyblue;
+  height: 100px;
+  width: 100%;
+  display: flex;
+  .logo {
+    font-size: 40px;
+    margin-left: 15px;
+  }
+  .menu-box {
+    width: 50vw;
+    margin-left: 30px;
+    &__list {
+      display: flex;
+      &__btn {
+        margin-left: 15px;
+        background-color: #ffff00;
+        padding: 15px;
+        width: 120px;
+        height: 50px;
+        text-align: center;
+        border-radius: 20px;
+        margin-top: 25px;
+        box-shadow: 5px 5px 5px #808080;
+      }
+    }
+  }
+  .user {
+    margin-left: auto;
+    margin-right: 20px;
+    &__log {
+    }
+    &__content {
+      margin-top: 10px;
+    }
+  }
+}

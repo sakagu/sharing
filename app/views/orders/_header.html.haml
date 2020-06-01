@@ -1,0 +1,23 @@
+.header
+  %h1.logo
+    sharing
+  .menu-box
+    %ul.menu-box__list
+      %li.menu-box__list__btn
+        = link_to new_order_path do
+          新規発注
+      %li.menu-box__list__btn
+        納期確認中
+      %li.menu-box__list__btn
+        履歴
+
+  .user
+    .user__log
+      %p.user__log_out
+        = link_to edit_user_path(current_user) do
+          ログアウト
+      .user__content  
+        %p.user__content__company
+          = current_user.company
+        %p.user__content__name
+          = current_user.name
