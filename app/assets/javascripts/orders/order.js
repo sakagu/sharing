@@ -1,13 +1,13 @@
-$(function(){
-  // $('.date-picker').datetimepicker(pickTime: false);
-  $('.date-picker').datepicker();
+// $(function(){
+//   // $('.date-picker').datetimepicker(pickTime: false);
+//   $('.form-control').datepicker();
 
 
 
-  // $('.date-picker').on('click',function(){
-  //   console.log("成功");
-  // });
+// //   // $('.date-picker').on('click',function(){
+// //   //   console.log("成功");
+// //   // });
 
 
 
-});
+// });
