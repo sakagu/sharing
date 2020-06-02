@@ -3,6 +3,9 @@
   %head
     %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
     %title Sharing
+    -# = stylesheet_link_tag   "../bootstrap-datepicker-1.9.0-dist/css/bootstrap-datepicker.min.css"
+    = javascript_include_tag 'src' "../bootstrap-datepicker-1.9.0-dist/js/bootstrap-datepicker.min.js"
+    = javascript_include_tag 'src'"../bootstrap-datepicker-1.9.0-dist/locales/bootstrap-datepicker.ja.min.js"
     = csrf_meta_tags
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'

@@ -15,9 +15,16 @@
           %p電話番号
           = f.number_field :consignee, class: 'input-box__text', placeholder: '例:090-1234-5678'
           %p注文番号
-          = f.text_field :order_number, class: 'input-box__text', placeholder: ''
+          = f.text_field :order_number, class: 'input-box__text'
           %p品番
-          = f.text_field :part_number, class: 'input-box__text', placeholder: ''
+          = f.text_field :part_number, class: 'input-box__text'
+          %p希望納期
+          = f.text_field :desired_date, class: 'form-control date-picker'
+
+          -# = f.text_field :desired_date, class: 'input-box__text', type="date"
+
+
+          -# <input name="date" type="date" />
 
 
         = f.submit 'Send', class: 'submit-btn'
