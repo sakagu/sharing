@@ -5,5 +5,5 @@ Rails.application.routes.draw do
   root "orders#index"
   resources :users, only: [:edit, :update]
   resources :groups, only: [:new, :create]
-  resources :orders, only: [:index, :new, :create]
+  resources :orders, only: [:index, :new, :create, :update]
 end

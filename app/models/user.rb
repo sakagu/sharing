@@ -7,4 +7,8 @@ class User < ApplicationRecord
   validates :name, presence: true
   validates :company, presence: true
 
+  has_many :group_users
+  has_many :orders
+  has_many :groups, through: :group_users
+
 end
