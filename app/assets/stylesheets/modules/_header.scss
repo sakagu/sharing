@@ -3,6 +3,9 @@
   height: 100px;
   width: 100%;
   display: flex;
+  position: fixed; 
+  position:relative; 
+  z-index:0;
   .logo {
     font-size: 40px;
     margin-left: 15px;
@@ -28,8 +31,6 @@
   .user {
     margin-left: auto;
     margin-right: 20px;
-    &__log {
-    }
     &__content {
       margin-top: 10px;
     }

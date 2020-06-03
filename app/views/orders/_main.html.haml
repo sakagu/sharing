@@ -1,5 +1,7 @@
 .main
-  %h1.calendar
+  .calendar
+    - if current_user.authority != 1
+      #calendar
     - if current_user.authority == 1
       %h1
         メーカー納期回答待ち
@@ -12,3 +14,5 @@
                 %br/
               .box__order__desired-date
                 = order.desired_date
+
+  

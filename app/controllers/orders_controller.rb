@@ -2,6 +2,10 @@ class OrdersController < ApplicationController
 
   def index
     @order = Order.all
+    respond_to do |format|
+      format.html
+      format.json
+    end
   end
 
   def new
@@ -21,7 +25,6 @@ class OrdersController < ApplicationController
   end
 
   def update 
-    binding.pry
     order = Order.find(params[:id])
     order.update(up_order_params)
   end

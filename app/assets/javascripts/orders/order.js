@@ -4,4 +4,15 @@ $(function(){
 
 });
 
+  $("#calendar").fullCalendar({
+
+  });
+
+
+
+
+
 });
+
+
+
