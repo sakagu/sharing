@@ -13,7 +13,7 @@
           %p荷受
           = f.text_field :consignee, class: 'input-box__text', placeholder: 'お荷受の方'
           %p電話番号
-          = f.number_field :consignee, class: 'input-box__text', placeholder: '例:090-1234-5678'
+          = f.text_field :tel, class: 'input-box__text', placeholder: '例:090-1234-5678'
           %p注文番号
           = f.text_field :order_number, class: 'input-box__text'
           %p品番
@@ -24,7 +24,10 @@
 
         = f.submit 'Send', class: 'submit-btn'
 
-        -# %input#datepicker{:type => "text"}/
+    %p
+    = link_to root_path do
+      トップページへ戻る
+
 
      
 
