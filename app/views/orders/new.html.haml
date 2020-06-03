@@ -19,15 +19,12 @@
           %p品番
           = f.text_field :part_number, class: 'input-box__text'
           %p希望納期
-          -# = f.text_field :desired_date, class: 'form-control date-picker'
-
-          -# = f.text_field :desired_date, class: 'input-box__text', type="date"
-
-          -# <input name="date" type="date" />
-
-        
+          = f.text_field :desired_date, class: 'input-box__text datepicker'
+          
 
         = f.submit 'Send', class: 'submit-btn'
+
+        -# %input#datepicker{:type => "text"}/
 
      
 

@@ -1,13 +1,7 @@
-// $(function(){
-//   // $('.date-picker').datetimepicker(pickTime: false);
-//   $('.form-control').datepicker();
+$(function(){
+  $('.datepicker').datepicker({
+  dateFormat: 'yy年mm月dd日'
 
+});
 
-
-// //   // $('.date-picker').on('click',function(){
-// //   //   console.log("成功");
-// //   // });
-
-
-
-// });
+});

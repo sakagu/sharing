@@ -19,7 +19,7 @@ class OrdersController < ApplicationController
 
   private
   def order_params
-    params.require(:order).permit(:site_name, :part_number, :delively_place, :order_number, :tel, :consignee).merge(user_id: current_user.id, stage:1)
+    params.require(:order).permit(:site_name, :part_number, :delively_place, :order_number, :tel, :consignee, :desired_date).merge(user_id: current_user.id, stage:1)
   end
 
 end
