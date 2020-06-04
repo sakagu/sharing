@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20200602001957) do
+ActiveRecord::Schema.define(version: 20200603063059) do
 
   create_table "group_users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer  "group_id"
@@ -31,12 +31,14 @@ ActiveRecord::Schema.define(version: 20200602001957) do
     t.string   "part_number",    null: false
     t.string   "delively_place", null: false
     t.string   "order_number"
-    t.integer  "tel"
+    t.string   "tel"
     t.string   "consignee"
     t.datetime "created_at",     null: false
     t.datetime "updated_at",     null: false
     t.integer  "user_id"
     t.integer  "stage"
+    t.string   "desired_date"
+    t.string   "delivery_date"
   end
 
   create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|

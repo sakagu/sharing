@@ -1,0 +1,32 @@
+.wrapper
+  = render "header"
+  .show
+    .order-details
+      %h1発注内容
+      %p.site-name
+        現場名:
+        = @order.site_name
+      %p.delively-place
+        納入場所:
+        = @order.delively_place
+      %p.consignee
+        荷受:
+        = @order.consignee
+      %p.tel
+        電話番号:
+        = @order.tel
+      %p.order_number
+        注文番号:
+        = @order.order_number
+      %p.part_number
+        品番:
+        = @order.part_number
+      %p.desired_date
+        希望納期:
+        = @order.desired_date
+
+
+    %p
+    = link_to root_path do
+      トップページへ戻る
+      

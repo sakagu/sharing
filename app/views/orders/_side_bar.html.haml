@@ -1,24 +1,29 @@
 .side
-  %h1.content
-    納期回答待ち
-  .box
-    .box__sitename
-      山田様邸
-    .box__hope
-      6月11日
-  .box
-    .box__sitename
-      山田様邸
-    .box__hope
-      6月11日
-  .box
-    .box__sitename
-      山田様邸
-    .box__hope
-      6月11日
-  .box
-    .box__sitename
-      山田様邸
-    .box__hope
-      6月11日
+  - if current_user.authority != 1
+    %h1.content
+      納期回答待ち    
+    .box
+      - current_user.orders.each do |order|
+        .box__order
+          = link_to order_path(order) do
+            .box__order__site-name
+              = order.site_name
+              %br/
+            .box__order__desired-date
+              = order.desired_date
+
+  - if current_user.authority == 1
+    %h1
+      新規受注状況
+    - @orders.each do |order|
+      - if order.stage == 1
+        .box__order
+          = link_to edit_order_path(order) do
+            .box__order__site-name
+              = order.site_name
+              %br/
+            .box__order__desired-date
+              = order.desired_date
+
     
+
