@@ -15,7 +15,7 @@
   - if current_user.authority == 1
     %h1
       新規受注状況
-    - @order.each do |order|
+    - @orders.each do |order|
       - if order.stage == 1
         .box__order
           = link_to edit_order_path(order) do

@@ -1,13 +1,7 @@
-json.array!(@oders) do |event|
-  json.extract! event, :id, :title, :body
-  json.start event.delivery_data
-  json.end event.delivery_data
-  json.url event_url(event, format: :html)
+json.array!(@orders) do |order|
+  if current_user.id == order.user_id
+  json.id order.id
+  json.start order.delivery_date
+  json.title order.site_name
+  end
 end
-
-# json.array!(@oders) do |event|
-#   json.extract! event, :id, :title, :body
-#   json.start event.start_date
-#   json.end event.end_date
-#   json.url event_url(event, format: :html)
-# end

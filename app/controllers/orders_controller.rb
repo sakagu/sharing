@@ -1,11 +1,7 @@
 class OrdersController < ApplicationController
 
   def index
-    @order = Order.all
-    respond_to do |format|
-      format.html
-      format.json
-    end
+    @orders = Order.all
   end
 
   def new

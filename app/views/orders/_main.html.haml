@@ -5,7 +5,7 @@
     - if current_user.authority == 1
       %h1
         メーカー納期回答待ち
-      - @order.each do |order|
+      - @orders.each do |order|
         - if order.stage == 2
           .box__order
             = link_to edit_order_path(order) do
