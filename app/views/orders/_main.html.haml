@@ -3,16 +3,42 @@
     - if current_user.authority != 1
       #calendar
     - if current_user.authority == 1
-      %h1
-        メーカー納期回答待ち
-      - @orders.each do |order|
-        - if order.stage == 2
-          .box__order
-            = link_to edit_order_path(order) do
-              .box__order__site-name
-                = order.site_name
-                %br/
-              .box__order__desired-date
-                = order.desired_date
+      .main__box
+        .main__box__left
+          .content-title
+            %h1メーカー納期回答待ち
+          - @orders.each do |order|
+            - if order.stage == 2
+              .box__order
+                = link_to edit_order_path(order) do
+                  .box__order__content
+                    %p得意先:#{order.user.company}
+                  .box__order__content
+                    %p現場名:#{order.site_name}
+                  .box__order__content
+                    %p:希望納期:
+                    = order.desired_date
+        .main__box__right
+          .content-title
+            .content-title__link
+              %i.fas.fa-link
+              %h1リンク集
+          .content-link
+            %ul
+              %li
+                %a{:href => "#"}
+                  e-Connection
+              %li
+                %a{:href => "#"}
+                  alphas
+              %li
+                %a{:href => "#"}
+                  お湯net
+              %li
+                %a{:href => "#"}
+                  D-SKET
+              %li
+                %a{:href => "#"}
+                  WOODONE NET
 
-  
+

@@ -1,23 +1,35 @@
 .header
-  %h1.logo
-    sharing
+  .logo
+    = image_tag src="/assets/logo3.jpg",size: "200x50"
   .menu-box
-    %ul.menu-box__list
-      %li.menu-box__list__btn
-        = link_to new_order_path do
-          新規発注
-      %li.menu-box__list__btn
-        納期確認中
-      %li.menu-box__list__btn
-        履歴
-
-  .user
-    .user__log
-      %p.user__log_out
-        = link_to edit_user_path(current_user) do
-          ログアウト
-      .user__content  
-        %p.user__content__company
-          = current_user.company
-        %p.user__content__name
-          = current_user.name
+    - if current_user.authority != 1
+      %ul.menu-box__list
+        %li.menu-box__list__btn
+          = link_to new_order_path do
+            %i.fas.fa-external-link-alt
+              新規発注
+        %li.menu-box__list__btn
+          = link_to history_orders_path do
+            %i.fas.fa-history
+              履歴
+        .user__log
+          %p.user__log_out
+            = link_to edit_user_path(current_user) do
+              %i.fas.fa-home
+                ログアウト
+    - if current_user.authority == 1
+      %ul.menu-box__list
+        %li.menu-box__list__btn
+          = link_to history_orders_path do
+            %i.fas.fa-history
+              履歴
+        .user__log
+          %p.user__log_out
+            = link_to edit_user_path(current_user) do
+              %i.fas.fa-home
+                ログアウト
+  .user__content  
+    %p.user__content__company
+      = current_user.company
+    %p.user__content__name
+      = current_user.name

@@ -1,7 +1,7 @@
 class OrdersController < ApplicationController
 
   def index
-    @orders = Order.all
+    @orders = Order.includes(:user)
   end
 
   def new
@@ -12,8 +12,8 @@ class OrdersController < ApplicationController
     Order.create(order_params)
   end
 
-  def show
-    @order = Order.find(params[:id])
+  def history
+    @order = Order.includes(:user)
   end
 
   def edit
@@ -27,7 +27,7 @@ class OrdersController < ApplicationController
 
   private
   def order_params
-    params.require(:order).permit(:site_name, :part_number, :delively_place, :order_number, :tel, :consignee, :desired_date).merge(user_id: current_user.id, stage:1)
+    params.require(:order).permit(:site_name, :part_number, :delively_place, :order_number, :tel, :consignee, :desired_date,:order_id).merge(user_id: current_user.id, stage:1)
   end
   def up_order_params
     params.require(:order).permit(:site_name, :part_number, :delively_place, :order_number, :tel, :consignee, :desired_date, :stage, :delivery_date)

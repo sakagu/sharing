@@ -1,32 +1,41 @@
 .wrapper
   = render "header"
-  .show
-    .order-details
-      %h1発注内容
-      %p.site-name
-        現場名:
-        = @order.site_name
-      %p.delively-place
-        納入場所:
-        = @order.delively_place
-      %p.consignee
-        荷受:
-        = @order.consignee
-      %p.tel
-        電話番号:
-        = @order.tel
-      %p.order_number
-        注文番号:
-        = @order.order_number
-      %p.part_number
-        品番:
-        = @order.part_number
-      %p.desired_date
-        希望納期:
-        = @order.desired_date
+  .allcontent
+    .allcontent__box
+      .menu-title
+        %h1発注内容
+        .order__menu
+          .order__menu__content
+            %p.order__menu__content__name
+              得意先名:
+              = @order.user.company
+           %p.order__menu__content__name
+              得意先担当:
+              = @order.user.name
+            %p.order__menu__content__name
+              現場名:
+              = @order.site_name
+            %p.order__menu__content__name
+              納入場所:
+              = @order.delively_place
+            %p.order__menu__content__name
+              荷受:
+              = @order.consignee
+            %p.order__menu__content__name
+              電話番号:
+              = @order.tel
+            %p.order__menu__content__name
+              注文番号:
+              = @order.order_number
+            %p.order__menu__content__name
+              希望納期:
+              = @order.desired_date
+            %p.order__menu__content__name
+              発注内容:
+              = @order.part_number
 
 
-    %p
-    = link_to root_path do
-      トップページへ戻る
+      %p.root-path
+        = link_to root_path do
+          トップページへ戻る
       

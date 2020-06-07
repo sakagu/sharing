@@ -1,0 +1,36 @@
+%h1.menu-title
+  発注内容
+.order__menu
+  .order__menu__content
+    .order__menu__content__edit
+      %i.fas.fa-map-marker-alt
+      %p現場名:
+      = @order.site_name
+    %p.order__menu__content__edit
+      %i.fas.fa-truck
+      納入場所:
+      = @order.delively_place
+    %p.order__menu__content__edit
+      %i.fas.fa-people-carry
+      荷受:
+      = @order.consignee
+    %p.order__menu__content__edit
+      %i.fas.fa-mobile-alt
+      電話番号:
+      = @order.tel
+    %p.order__menu__content__edit
+      %i.far.fa-bell
+      注文番号:
+      = @order.order_number
+    %p.order__menu__content__edit
+      %i.far.fa-calendar-alt
+      希望納期:
+      = @order.desired_date
+    %p.order__menu__content__edit
+      %i.fas.fa-shopping-cart
+      発注内容:
+      = @order.part_number
+%p.root-path
+= link_to root_path do
+  .fas.fa-undo-alt
+  %p HOME
