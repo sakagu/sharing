@@ -1,0 +1,20 @@
+.wrapper
+  = render "header"
+  .allcontent
+    .allcontent__box
+      .menu-title
+        %i.fas.fa-search
+        .menu-title__content
+          %h1発注履歴検索
+      .order__menu
+        .field-input
+          %input#search-field.field-input__search{:placeholder => "検索したい現場名を入力してください", :type => "text"}/
+          .search-btn
+            %button検索
+
+      .order-search-result-main
+        .order-search-result
+      .root-path
+        = link_to root_path do
+          .fas.fa-undo-alt
+          %p HOME

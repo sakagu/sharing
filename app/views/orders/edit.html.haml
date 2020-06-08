@@ -1,39 +1,9 @@
 .wrapper
   = render "header"
-  .show
-    .order-details
-      %h1発注
-      %p.site-name
-        現場名:
-        = @order.site_name
-      %p.delively-place
-        納入場所:
-        = @order.delively_place
-      %p.consignee
-        荷受:
-        = @order.consignee
-      %p.tel
-        電話番号:
-        = @order.tel
-      %p.order_number
-        注文番号:
-        = @order.order_number
-      %p.part_number
-        品番:
-        = @order.part_number
-      %p.desired_date
-        希望納期:
-        = @order.desired_date
-
-
-    %p
-    = link_to root_path do
-      トップページへ戻る
-
-  = form_for [@order] do |f|
-    = f.radio_button :stage, :"2"
-    = f.label :stage, "発注済", {value: :"2", style: "display: inline-block;"}
-    = f.radio_button :stage, :"3"
-    = f.label :stage, "納期回答済", {value: :"3", style: "display: inline-block;"}
-    = f.text_field :delivery_date, class: 'input-box__text datepicker'
-    = f.submit '更新', class: 'submit-btn'
+  .allcontent
+    .allcontent__box
+      - if current_user.authority == 1
+        = render "ed_authority"
+      - if current_user.authority != 1
+        = render "ed_noauthority"
+      
