@@ -10,21 +10,33 @@
             .input-box__name
             %i.fas.fa-map-marker-alt
             %label.label現場名
+            -if @order.errors.messages[:site_name].any?
+              .error-message
+                %p現場名は必ず入力してください
             = f.text_field :site_name, class: 'input-box__text', placeholder: ' 現場名を入力してください',type:"text"
           .input-box
             .input-box__name
             %i.fas.fa-truck
             %label.label納入場所
+            -if @order.errors.messages[:delively_place].any?
+              .error-message
+                %p納入場所は必ず入力してください
             = f.text_field :delively_place, class: 'input-box__text', placeholder: ' 納入先を入力してください',type:"text"
           .input-box
             .input-box__name
             %i.fas.fa-people-carry
             %label.label荷受
+            -if @order.errors.messages[:consignee].any?
+              .error-message
+                %p荷受の方を必ず入力してください
             = f.text_field :consignee, class: 'input-box__text', placeholder: ' お荷受の方'
           .input-box
             .input-box__name
             %i.fas.fa-mobile-alt
             %label.label電話番号
+            -if @order.errors.messages[:tel].any?
+              .error-message
+                %p電話番号を正しく必ず入力してください
             = f.text_field :tel, class: 'input-box__text', placeholder: ' 例:090-1234-5678',autocomplete:"off"
             .input-box
               .input-box__name
@@ -35,11 +47,17 @@
               .input-box__name
               %i.far.fa-calendar-alt
               %label.label希望納期
+              -if @order.errors.messages[:desired_date].any?
+                .error-message
+                  %p希望納期は必ず入力してください
               = f.text_field :desired_date, class: 'input-box__text datepicker', placeholder: ' 例:2019-05-04',autocomplete:"off"
             .input-box
               .input-box__name
               %i.fas.fa-shopping-cart
               %label.label品番（発注内容）
+              -if @order.errors.messages[:part_number].any?
+                .error-message
+                  %p発注内容は必ず入力してください
               = f.text_area :part_number, class: 'input-box__text input-box__big', placeholder: ' 例:RUF-A2450SAWX 13A',autocomplete:"off"
             
           .submit-area

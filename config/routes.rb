@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   resources :orders, only: [:index, :new, :create, :update, :show, :edit] do
     collection do
       get 'history'
+      get 'search'
     end
   end
 end
