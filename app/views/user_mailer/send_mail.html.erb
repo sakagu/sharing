@@ -1,5 +1,9 @@
-<h1> <%= @order.user.name %> </h1>
-
-<p>
-  Thank you to join our app.
-</p>
+<h1> <%= @order.user.name %>様 </h1>
+<p><%= @order.site_name %>の納期回答です</p>
+<ul>
+<li>納期：<%= @order.desired_date%></li>
+<li>納入場所：<%= @order.delively_place%></li>
+<li>発注内容：<%= @order.part_number%></li>
+<li>希望納期：<%= @order.desired_date%></li>
+</ul>
+<p>ご注文ありがとうございました。ご確認宜しくお願い致します。</p>
