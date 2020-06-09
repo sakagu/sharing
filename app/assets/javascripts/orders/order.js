@@ -15,12 +15,4 @@ $("#calendar").fullCalendar({
  });
 
  
-    
-
-
-
-
-
-
-
 });

@@ -29,17 +29,32 @@ class OrdersController < ApplicationController
   end
 
   def edit
-    @order = Order.find(params[:id])
+    @order = Order.find(params[:id])    
   end
+
 
   def update 
     order = Order.find(params[:id])
     order.update(up_order_params)
+    respond_to do |format|
+    send_mail(order).deliver_now
+    end
+  end
+
+  def send_mail(order)
+    @order = order
+    mail to: 'sakatoshi10416@gmail.com', subject:"Sample from Rails"
   end
 
   def show
     @order = Order.find(params[:id])
   end
+
+
+
+
+
+
 
   private
   def order_params

@@ -1,0 +1,17 @@
+.create-edit-message-box {
+  font-weight: bold;
+  text-align: center;
+  .create-edit-message {
+    display: flex;
+    justify-content: center;
+    .message {
+      font-size: 25px;
+      margin-top: 300px;
+      background: #dfefff;
+      box-shadow: 0px 0px 0px 5px #dfefff;
+      border: dashed 2px white;
+      padding: 10px;
+      width: 500px;
+    }
+  }
+}

@@ -1,7 +1,11 @@
 .wrapper
   = render "header"
-  %p.message
-    発注完了しました 
-  %p
-    = link_to root_path do
-      トップページへ戻る
+  .create-edit-message-box
+    .create-edit-message
+      .message
+        %pご注文ありがとうございます
+        %p発注完了しました 
+    .root-path
+      = link_to root_path do
+        .fas.fa-undo-alt
+        %p HOME
