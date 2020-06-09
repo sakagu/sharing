@@ -9,7 +9,6 @@ Rails.application.routes.draw do
     collection do
       get 'history'
       get 'search'
-      # get 'send_mail'
     end
   end
 end

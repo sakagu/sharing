@@ -36,14 +36,9 @@ class OrdersController < ApplicationController
   def update 
     order = Order.find(params[:id])
     order.update(up_order_params)
-    respond_to do |format|
-    send_mail(order).deliver_now
+    if order.stage == 3
+    UserMailer.send_mail(order).deliver_now
     end
-  end
-
-  def send_mail(order)
-    @order = order
-    mail to: 'sakatoshi10416@gmail.com', subject:"Sample from Rails"
   end
 
   def show
@@ -52,14 +47,11 @@ class OrdersController < ApplicationController
 
 
 
-
-
-
-
   private
   def order_params
     params.require(:order).permit(:site_name, :part_number, :delively_place, :order_number, :tel, :consignee, :desired_date,:order_id,:delivery_date).merge(user_id: current_user.id, stage:1)
   end
+
   def up_order_params
     params.require(:order).permit(:site_name, :part_number, :delively_place, :order_number, :tel, :consignee, :desired_date, :stage, :delivery_date)
   end
