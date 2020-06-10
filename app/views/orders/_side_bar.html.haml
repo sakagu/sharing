@@ -4,14 +4,15 @@
       納期回答待ち    
     .box
       - current_user.orders.each do |order|
-        .box__order
-          = link_to edit_order_path(order) do
-            .box__order__site-name
-              = order.site_name
-              %br/
-            .box__order__desired-date
-              %p:希望納期:
-              = order.desired_date
+        - if order.stage == 1
+          .box__order
+            = link_to edit_order_path(order) do
+              .box__order__site-name
+                = order.site_name
+                %br/
+              .box__order__desired-date
+                %p:希望納期:
+                = order.desired_date
 
   - if current_user.authority == 1
     %h1.content

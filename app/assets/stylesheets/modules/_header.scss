@@ -45,4 +45,10 @@
     font-weight: bold;
   }
 }
-
+.add-menu {
+  font-weight: bold;
+  color: black;
+  &__box{
+    display: flex;
+  }
+}
