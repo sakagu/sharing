@@ -59,8 +59,16 @@ justify-content: center;
         width: 200px;
         text-align: center;
         background-color: #1b2538;
+        transition:all 1s ease;
       }
+    button:hover {
+      background:#fff;
+color:#1b2538;
+background-color: #aaaaaa;
+    }
   }
+
+
   .menu-title__content {
     display: inline;
     h1 {

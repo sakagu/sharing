@@ -39,17 +39,10 @@
 .submit-area {
   display: flex;
   justify-content: center;
-  .submit-btn {
-    width: 200px;
-    background-color: #1b2538;
-    color: white;   
-
-
-  }
+  overflow: hidden;
+  
 }
-.root-path {
-  margin-top: 100px;
-}
+
 
 .error-message {
 p {
@@ -89,41 +82,27 @@ p {
 }
 }
 
+.submit-btn {
+  width: 200px;
+  background-color: #1b2538;
+  color: white;
+  transition:all 1s ease;
+  border: solid 2px #1b2538;
+}
 
+.submit-btn:hover {
+background:#fff;
+color:#1b2538;
+background-color: #aaaaaa;
+}
 
-button{
-  background:#1AAB8A;
-  color:#fff;
-  border:none;
-  position:relative;
-  height:60px;
-  font-size:1.6em;
-  padding:0 2em;
-  cursor:pointer;
-  transition:800ms ease all;
-  outline:none;
+.root-path {
+  margin-top: 100px;
+  transition:all .5s ease;
+  
 }
-button:hover{
-  background:#fff;
-  color:#1AAB8A;
-}
-button:before,button:after{
-  content:'';
-  position:absolute;
-  top:0;
-  right:0;
-  height:2px;
-  width:0;
-  background: #1AAB8A;
-  transition:400ms ease all;
-}
-button:after{
-  right:inherit;
-  top:inherit;
-  left:0;
-  bottom:0;
-}
-button:hover:before,button:hover:after{
-  width:100%;
-  transition:800ms ease all;
+
+.root-path:hover {
+  font-size: 20px;
+
 }
