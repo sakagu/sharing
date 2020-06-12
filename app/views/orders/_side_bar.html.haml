@@ -6,13 +6,15 @@
       - current_user.orders.each do |order|
         - if order.stage == 1
           .box__order
+            .box__order__hover
             = link_to edit_order_path(order) do
-              .box__order__site-name
-                = order.site_name
-                %br/
-              .box__order__desired-date
-                %p:希望納期:
-                = order.desired_date
+              .box__order__body
+                .box__order__site-name
+                  = order.site_name
+                  %br/
+                .box__order__desired-date
+                  %p:希望納期:
+                  = order.desired_date
 
   - if current_user.authority == 1
     %h1.content
@@ -20,14 +22,16 @@
     - @orders.each do |order|
       - if order.stage == 1
         .box__order
+          .box__order__hover
           = link_to edit_order_path(order) do
-            .box__order__content
-              = order.user.company
-            .box__order__content
-              = order.site_name
-            .box__order__content
-              %p:希望納期:
-              = order.desired_date
+            .box__order__body
+              .box__order__content
+                = order.user.company
+              .box__order__content
+                = order.site_name
+              .box__order__content
+                %p:希望納期:
+                = order.desired_date
         .box__order__link
           
 

@@ -10,14 +10,16 @@
           - @orders.each do |order|
             - if order.stage == 2
               .box__order
+                .box__order__hover
                 = link_to edit_order_path(order) do
-                  .box__order__content
-                    %p得意先:#{order.user.company}
-                  .box__order__content
-                    %p現場名:#{order.site_name}
-                  .box__order__content
-                    %p:希望納期:
-                    = order.desired_date
+                  .box__order__body
+                    .box__order__content
+                      %p得意先:#{order.user.company}
+                    .box__order__content
+                      %p現場名:#{order.site_name}
+                    .box__order__content
+                      %p:希望納期:
+                      = order.desired_date
         .main__box__right
           .content-title
             .content-title__link
