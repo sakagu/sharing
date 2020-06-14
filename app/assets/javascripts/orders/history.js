@@ -35,6 +35,7 @@ $.ajax({
   dataType: 'json'
 })
 .done(function(orders){
+  console.log(orders);
   $(".order-search-result").empty();
   if (orders.length !== 0) {
     orders.forEach(function(order){

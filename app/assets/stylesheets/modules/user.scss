@@ -105,15 +105,16 @@
     text-align: center;
     border: none;
     border-radius: 2px;
-
+    transition:all 1s ease;
     
   }
+  .btn:hover {
+    background:#fff;
+    color:#1b2538;
+    background-color: #aaaaaa;
+    }
 
   input[type='submit'] {
-    // float: left;
-    // margin-top: 20px;
-    // color: #fff;
-    // background-color: #38aef0;
     
     width: 200px;
     background-color: #1b2538;

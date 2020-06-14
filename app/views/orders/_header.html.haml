@@ -6,28 +6,36 @@
     - if current_user.authority != 1
       %ul.menu-box__list
         %li.menu-box__list__btn
-          = link_to new_order_path do
-            %i.fas.fa-external-link-alt
-              新規発注
+          .menu-box__list__btn__hover
+          .menu-box__list__btn__body
+            = link_to new_order_path do
+              %p.fas.fa-external-link-alt
+                新規発注
         %li.menu-box__list__btn
-          = link_to history_orders_path do
-            %i.fas.fa-history
-              履歴
-        .user__log
-          %p.user__log_out
+          .menu-box__list__btn__hover
+          .menu-box__list__btn__body
+            = link_to history_orders_path do
+              %p.fas.fa-history
+                履歴
+        %li.menu-box__list__btn
+          .menu-box__list__btn__hover
+          .menu-box__list__btn__body
             = link_to edit_user_path(current_user) do
-              %i.fas.fa-home
+              %p.fas.fa-home
                 ログアウト
     - if current_user.authority == 1
       %ul.menu-box__list
         %li.menu-box__list__btn
-          = link_to history_orders_path do
-            %i.fas.fa-history
-              履歴
-        .user__log
-          %p.user__log_out
+          .menu-box__list__btn__hover
+          .menu-box__list__btn__body
+            = link_to history_orders_path do
+              %p.fas.fa-history
+                履歴
+        %li.menu-box__list__btn
+          .menu-box__list__btn__hover
+          .menu-box__list__btn__body
             = link_to edit_user_path(current_user) do
-              %i.fas.fa-home
+              %p.fas.fa-home
                 ログアウト
   .user__content  
     %p.user__content__company
