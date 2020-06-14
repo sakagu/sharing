@@ -1,5 +1,6 @@
 .wrapper
   = render "header"
+  = render "back"
   .allcontent
     .allcontent__box
       %h1.menu-title
@@ -18,7 +19,7 @@
                 .runningman__icon__box
                   .runningman__icon__box__content
                     %i.fas.fa-running
-              = f.text_field :site_name, class: 'input-box__text', placeholder: ' 現場名を入力してください',type:"text"
+              = f.text_field :site_name, class: 'input-box__text', placeholder: ' 現場名を入力してください',type:"text",autocomplete:"off"
           .input-box
             .input-box__name
             %i.fas.fa-truck
@@ -31,7 +32,7 @@
                 .runningman__icon__box
                   .runningman__icon__box__content2
                     %i.fas.fa-running
-              = f.text_field :delively_place, class: 'input-box__text2', placeholder: ' 納入先を入力してください',type:"text"
+              = f.text_field :delively_place, class: 'input-box__text2', placeholder: ' 納入先を入力してください',type:"text",autocomplete:"off"
           .input-box
             .input-box__name
             %i.fas.fa-people-carry
@@ -44,7 +45,7 @@
                 .runningman__icon__box
                   .runningman__icon__box__content3
                     %i.fas.fa-running
-              = f.text_field :consignee, class: 'input-box__text3', placeholder: ' お荷受の方'
+              = f.text_field :consignee, class: 'input-box__text3', placeholder: ' お荷受の方',autocomplete:"off"
           .input-box
             .input-box__name
             %i.fas.fa-mobile-alt
@@ -103,6 +104,6 @@
           .fas.fa-undo-alt
           %p HOME
 
-     
+
 
     
