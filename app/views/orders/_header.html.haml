@@ -1,7 +1,7 @@
 .header
   .logo
     = link_to root_path do
-      = image_tag src="/assets/logo3.jpg",size: "200x50"
+      = image_tag "/images/logo3.jpg",size: "200x50"
   .menu-box
     - if current_user.authority != 1
       %ul.menu-box__list
