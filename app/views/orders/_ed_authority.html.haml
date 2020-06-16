@@ -49,7 +49,7 @@
     = f.label :stage, "納期回答済", {value: :"3", style: "display: inline-block;"}
     = f.text_field :delivery_date, class: 'input-box__text datepicker', placeholder:' 例:2019-05-04',autocomplete:"off"
     = f.submit '更新', class: 'submit-btn'
-%p.root-path
+.root-path
   = link_to root_path do
     .fas.fa-undo-alt
     %p HOME
