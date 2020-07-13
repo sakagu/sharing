@@ -1,7 +1,10 @@
 ## タイトル：sharing
 ・URL:http://3.114.46.12/</br>
-・テストアカウント</br>
+・商社側テストアカウント</br>
 &emsp;アドレス:t@t</br>
+&emsp;パスワード:12345678</br>
+・工務店側テストアカウント</br>
+&emsp;アドレス:k@k</br>
 &emsp;パスワード:12345678</br>
 ・GitURL:https://github.com/sakagu/sharing</br>
 ・開発環境:haml,SCSS,Ruby,Ruby on Rails,MySQL,GitHub,AWS</br>
