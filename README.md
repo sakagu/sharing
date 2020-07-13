@@ -18,3 +18,27 @@
 </br>
 ・企画背景</br>
 &emsp;商社勤務の経験から実務作業を効率化を考えました。</br>
+
+## users table
+|Colm|Type|Option|
+|----|----|------|
+|name|string|null: false|
+|company|string|null: false|
+|authority|integer||
+|email|string|null: false|
+|password|integer|null: false|
+|password_confirm|integer|null: false|
+
+## users table
+|Colm|Type|Option|
+|----|----|------|
+|site_name|string|null: false|
+|part_number|string|null: false|
+|delively_place|string|null: false|
+|order_number|string||
+|tel|string|null: false|
+|consignee|string|null: false|
+|user_id|integer|null: false|
+|stage|integer|null: false|
+|desired_date|string|null: false|
+|delivery_date|string|null: false|
