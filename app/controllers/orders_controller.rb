@@ -33,7 +33,11 @@ class OrdersController < ApplicationController
   end
 
   def edit
-    @order = Order.find(params[:id])    
+    @order = Order.find(params[:id])
+  end
+  
+  def edauthority
+    @order = Order.find(params[:id])
   end
 
 
@@ -44,6 +48,8 @@ class OrdersController < ApplicationController
     UserMailer.send_mail(order).deliver_now
     end
   end
+
+
 
   def show
     @order = Order.find(params[:id])

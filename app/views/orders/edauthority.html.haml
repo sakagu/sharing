@@ -1,0 +1,57 @@
+.allcontent
+  .allcontent__box
+    .menu-title
+      %h1発注内容
+    .order__menu
+      .order__menu__content-e
+        %p.order__menu__content__edit
+          %i.far.fa-building
+          得意先名:
+          = @order.user.company
+        %p.order__menu__content__edit
+          %i.far.fa-user
+          得意先担当:
+          = @order.user.name
+        %p.order__menu__content__edit
+          %i.fas.fa-map-marker-alt
+          現場名:
+          = @order.site_name
+        %p.order__menu__content__edit
+          %i.fas.fa-truck
+          納入場所:
+          = @order.delively_place
+        %p.order__menu__content__edit
+          %i.fas.fa-people-carry
+          荷受:
+          = @order.consignee
+        %p.order__menu__content__edit
+          %i.fas.fa-mobile-alt
+          電話番号:
+          = @order.tel
+        %p.order__menu__content__edit
+          %i.far.fa-bell
+          注文番号:
+          = @order.order_number
+        %p.order__menu__content__edit
+          %i.far.fa-calendar-alt
+          希望納期:
+          = @order.desired_date
+        %p.order__menu__content__edit
+          %i.fas.fa-shopping-cart
+          発注内容:
+          = @order.part_number
+
+    .delivery-date
+      = form_for [@order] do |f|
+        = f.radio_button :stage, :"1"
+        = f.label :stage, "未発注", {value: :"1", style: "display: inline-block;"}
+        = f.radio_button :stage, :"2"
+        = f.label :stage, "発注済", {value: :"2", style: "display: inline-block;"}
+        = f.radio_button :stage, :"3"
+        = f.label :stage, "納期回答済", {value: :"3", style: "display: inline-block;"}
+        = f.text_field :delivery_date, class: 'input-box__text datepicker', placeholder:' 例:2019-05-04',autocomplete:"off"
+        = f.submit '更新', class: 'submit-btn'
+    .root-path
+      = link_to root_path do
+        .fas.fa-undo-alt
+        %p HOME

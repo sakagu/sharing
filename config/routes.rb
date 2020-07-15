@@ -10,6 +10,9 @@ Rails.application.routes.draw do
       get 'history'
       get 'search'
     end
+    member do
+      get 'edauthority'
+    end
   end
 end
 
