@@ -3,7 +3,14 @@
   .allcontent
     .allcontent__box
       - if current_user.authority == 1
-        = render "ed_authority"
+        = render "edauthority"
       - if current_user.authority != 1
-        = render "ed_noauthority"
-      
+        .order__menu
+          = render partial: 'form'
+      - if @order.persisted?
+        = form_for [@order] ,url: { action: 'update_detail' } do |f|
+          = f.submit 'キャンセル依頼', class: 'submit-btn', id:'submit-btn-new',url:'update_detail',method: :post
+      .root-path
+        = link_to root_path do
+          .fas.fa-undo-alt
+          %p HOME

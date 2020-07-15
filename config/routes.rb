@@ -10,6 +10,11 @@ Rails.application.routes.draw do
       get 'history'
       get 'search'
     end
+    member do
+      get 'edauthority'
+      patch 'update_detail'
+      patch 'up_edauthority'
+    end
   end
 end
 

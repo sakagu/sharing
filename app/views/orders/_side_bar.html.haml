@@ -4,6 +4,20 @@
       納期回答待ち    
     .box
       - current_user.orders.each do |order|
+        - if order.stage == 4 || order.stage == 5
+          .box__order4
+            .box__order4__hover
+            = link_to edit_order_path(order) do
+              .box__order4__body
+                - if order.stage == 5
+                  %pキャンセル依頼
+                .box__order__content
+                  = order.user.company
+                .box__order__content
+                  = order.site_name
+                .box__order__content
+                  %p:希望納期:
+                  = order.desired_date
         - if order.stage == 1
           .box__order
             .box__order__hover
@@ -20,10 +34,25 @@
     %h1.content
       新規受注状況
     - @orders.each do |order|
+      - if order.stage == 4 || order.stage == 5
+        .box__order4
+          .box__order4__hover
+          = link_to edauthority_order_path(order) do
+            .box__order4__body
+              - if order.stage == 5
+                %pキャンセル依頼
+              .box__order__content
+                = order.user.company
+              .box__order__content
+                = order.site_name
+              .box__order__content
+                %p:希望納期:
+                = order.desired_date
+    - @orders.each do |order|
       - if order.stage == 1
         .box__order
           .box__order__hover
-          = link_to edit_order_path(order) do
+          = link_to edauthority_order_path(order) do
             .box__order__body
               .box__order__content
                 = order.user.company

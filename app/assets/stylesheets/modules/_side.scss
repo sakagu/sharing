@@ -26,10 +26,16 @@ a {
     background: repeating-linear-gradient(-45deg, #BBBBBB, #BBBBBB 2px, #fff 2px, #fff 4px);
   }
   .box__order {
+    background: #FFD700;
+  }
+  .box__order4 {
+    background: red;
+  }
+  .box__order,.box__order4 {
     padding: 0.5em 1em;
     margin: 2em 0;
     color: #232323;
-    background: #FFD700;
+   
     border-left: solid 10px #222222;
     width: 80%;
     margin-left: 50px;
@@ -38,7 +44,7 @@ a {
     position: relative;
     z-index:2;
     overflow: hidden;
-    .box__order__body {
+    .box__order__body,.box__order4__body {
       transition:all 1s ease;
       z-index:2;
       position:relative;
@@ -64,6 +70,20 @@ a {
     box-shadow: 0px 0px px 0px;
     border-right: solid 10px #FFD700;
     .box__order__body {
+      color:white;
+      padding-left:10px;
+      text-shadow:0px 0px 30px #fff;
+
+    }
+  }
+  .box__order4:hover .box__order4__hover {
+    left: 0px;
+
+  }
+  .box__order4:hover {
+    box-shadow: 0px 0px px 0px;
+    border-right: solid 10px red;
+    .box__order4__body {
       color:white;
       padding-left:10px;
       text-shadow:0px 0px 30px #fff;
