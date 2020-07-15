@@ -41,14 +41,22 @@ class OrdersController < ApplicationController
   end
 
 
-  def organization 
+  def update 
     order = Order.find(params[:id])
-    order.update(up_order_params)
-    if order.stage == 3
-    UserMailer.send_mail(order).deliver_now
+    if current_user.id == order.user.id
+       order.update(up_order_params2)
+    else
+      order.update(up_order_params)
+      if order.stage == 3
+      UserMailer.send_mail(order).deliver_now
+      end
     end
   end
-
+  
+  def update_detail
+    order = Order.find(params[:id])
+    order.update(stage: 5)
+  end
 
 
   def show
@@ -64,6 +72,9 @@ class OrdersController < ApplicationController
 
   def up_order_params
     params.require(:order).permit(:site_name, :part_number, :delively_place, :order_number, :tel, :consignee, :desired_date, :stage, :delivery_date)
+  end
+  def up_order_params2
+    params.require(:order).permit(:site_name, :part_number, :delively_place, :order_number, :tel, :consignee, :desired_date, :stage, :delivery_date).merge(stage:4)
   end
 
 end

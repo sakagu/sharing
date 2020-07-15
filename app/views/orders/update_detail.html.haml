@@ -1,0 +1,11 @@
+.wrapper
+  = render "header"
+  .create-edit-message-box
+    .create-edit-message
+      .message
+        %pキャンセル依頼しました 
+        %pキャンセルは締め時間によってできない場合がございます。
+    .root-path
+      = link_to root_path do
+        .fas.fa-undo-alt
+        %p HOME

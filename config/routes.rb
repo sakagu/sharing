@@ -12,7 +12,7 @@ Rails.application.routes.draw do
     end
     member do
       get 'edauthority'
-      post 'organization'
+      patch 'update_detail'
     end
   end
 end
