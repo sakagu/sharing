@@ -7,7 +7,7 @@
         - if order.stage == 4 || order.stage == 5
           .box__order4
             .box__order4__hover
-            = link_to edauthority_order_path(order) do
+            = link_to edit_order_path(order) do
               .box__order4__body
                 - if order.stage == 5
                   %pキャンセル依頼

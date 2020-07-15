@@ -1,5 +1,8 @@
 class OrdersController < ApplicationController
 
+  before_action :set_order, only: [:edit, :edauthority, :up_edauthority, :update, :update_detail,:show, :not_currect_user]
+  before_action :not_currect_user, only: [:edit, :update, :update_detail]
+
   def index
     @orders = Order.includes(:user)
   end
@@ -33,34 +36,29 @@ class OrdersController < ApplicationController
   end
 
   def edit
-    @order = Order.find(params[:id])
   end
   
   def edauthority
-    @order = Order.find(params[:id])
+  end
+
+  def up_edauthority
+    @order.update(up_order_params)
+      if @order.stage == 3
+      UserMailer.send_mail(@order).deliver_now
+      end
   end
 
 
   def update 
-    order = Order.find(params[:id])
-    if current_user.id == order.user.id
-       order.update(up_order_params2)
-    else
-      order.update(up_order_params)
-      if order.stage == 3
-      UserMailer.send_mail(order).deliver_now
-      end
-    end
+    @order.update(up_order_params2)
   end
   
   def update_detail
-    order = Order.find(params[:id])
-    order.update(stage: 5)
+    @order.update(stage: 5)
   end
 
 
   def show
-    @order = Order.find(params[:id])
   end
 
 
@@ -75,6 +73,14 @@ class OrdersController < ApplicationController
   end
   def up_order_params2
     params.require(:order).permit(:site_name, :part_number, :delively_place, :order_number, :tel, :consignee, :desired_date, :stage, :delivery_date).merge(stage:4)
+  end
+
+  def set_order
+    @order = Order.find(params[:id])
+  end
+
+  def not_currect_user
+    redirect_to root_path if current_user.id != @order.user_id
   end
 
 end

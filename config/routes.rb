@@ -13,6 +13,7 @@ Rails.application.routes.draw do
     member do
       get 'edauthority'
       patch 'update_detail'
+      patch 'up_edauthority'
     end
   end
 end

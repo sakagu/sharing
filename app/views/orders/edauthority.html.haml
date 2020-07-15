@@ -42,7 +42,7 @@
           = @order.part_number
 
     .delivery-date
-      = form_for [@order] do |f|
+      = form_for [@order] ,url: { action: 'up_edauthority' } do |f|
         = f.radio_button :stage, :"6"
         = f.label :stage, "キャンセル済", {value: :"6", style: "display: inline-block;"}
         = f.radio_button :stage, :"1"
