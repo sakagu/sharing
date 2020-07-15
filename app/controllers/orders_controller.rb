@@ -41,7 +41,7 @@ class OrdersController < ApplicationController
   end
 
 
-  def update 
+  def organization 
     order = Order.find(params[:id])
     order.update(up_order_params)
     if order.stage == 3

@@ -12,6 +12,7 @@ Rails.application.routes.draw do
     end
     member do
       get 'edauthority'
+      post 'organization'
     end
   end
 end
